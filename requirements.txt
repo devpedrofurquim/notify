@@ -32,7 +32,6 @@ google-auth-oauthlib==1.0.0
 googleapis-common-protos==1.59.1
 greenlet==1.1.2
 gunicorn==21.2.0
-gyp==0.1
 h11==0.14.0
 httplib2==0.20.2
 idna==3.3
