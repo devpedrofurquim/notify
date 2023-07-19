@@ -43,7 +43,7 @@ def register():
             flash('Password must be shorter than 15 characters.', category='error')
         else:
             new_user = User(email=email, username=username, password=generate_password_hash(
-                password1, method='scrypt'))
+                password1, method='sha256'))
             db.session.add(new_user)
             db.session.commit()
             login_user(new_user, remember=True)
