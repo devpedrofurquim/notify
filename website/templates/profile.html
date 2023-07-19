@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+
+<div class="row media">
+    <div class="col-12 d-flex justify-content-start align-items-center">
+        <img src="{{img_file}}" class="rounded-circle account-img me-5"></img>
+        <div class="media-body" id="update-form" method="post">
+            <h1 class="account-heading h2" id="update-username">{{user.username}}</h1>
+            <p class="text-secondary p" id="update-email">{{user.email}}</p>
+        </div>
+    </div>
+    <div class="col-12 d-block justify-content-start align-items-center">
+        <form method="post" enctype="multipart/form-data">
+            <label class="fs-5 mt-2">Account Info</label>
+            <hr>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="email" name="email" placeholder="{{user.email}}" aria-describedby="userEMail">
+                <label for="email" class="form-label">{{user.email}}</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" autocomplete="off" autofocus class="form-control" id="username" name="username" placeholder="{{user.username}}" aria-describedby="userName">
+                <label for="username">{{user.username}}</label>
+            </div>
+            <div class="col mb-3">
+                    <label class="form-label" for="customFile">Change Profile Picture (JPG, PNG)</label>
+                    <input type="file" class="form-control" accept="image/png, image/jpg, image/jpeg, .jpeg, .jpg, .png" name="picture" id="picture">
+                    <div id="preview">
+                        <p>No file currently selected for upload</p>
+                    </div>
+            </div>
+            <div class="col-2 mb-3">
+                <button class="mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Update</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

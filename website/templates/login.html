@@ -1,0 +1,37 @@
+{% extends 'index.html'%}
+{% block title %}Notify{% endblock %}
+{% block content %}
+  <div class="row align-items-center g-lg-5">
+    <div class="col-lg-7 text-center">
+      <div class="d-flex justify-content-center align-items-center">
+        <img src="static/imgs/coffee-shop.png" alt="" class="w-50">
+      </div>
+      <h1 class="display-6 fw-bold lh-1 text-body-emphasis mb-3">Welcome to Notify</h1>
+      <p class="col-lg-12 fs-5 text-center text-body-secondary">Take Notes. Stay Organized. Be Productive.</p>
+    </div>
+    <div class="col-md-10 mx-auto col-lg-5">
+      <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" method="post">
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" aria-describedby="userEMail">
+          <label for="email">Email address</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="password" autocomplete="off" name="password" class="form-control" id="password" placeholder="Password">
+          <label for="password">Password</label>
+        </div>
+        <div class="checkbox mb-3">
+          <label>
+            <input type="checkbox" name="remember-me" value="remember-me"> Remember me</input>
+          </label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
+        <hr class="my-4">
+        <div>
+          <small class="text-muted">
+              <a class="ml-2 text-decoration-none" href="{{ url_for('users.request_page') }}">Forgot Password?<a/>
+          </small>
+      </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

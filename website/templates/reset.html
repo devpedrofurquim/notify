@@ -1,0 +1,20 @@
+{% extends 'index.html'%}
+{% block title %}Reset Password{% endblock %}
+{% block content %}
+  <div class="row align-items-center g-lg-5">
+    <div class="col-md-10 mx-auto col-lg-5">
+      <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" method="post">
+        <div class="form-floating mb-3">
+          <input type="password" autocomplete="off" class="form-control" id="password1" name="password1" placeholder="Enter password">
+          <label for="password1" class="form-label">New password</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="password" autocomplete="off" class="form-control" id="password2" name="password2" placeholder="Confirm password">
+          <label for="password2" class="form-label">Confirm password</label>
+        </div>
+        <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Reset Password</button>
+        <hr class="my-4">
+      </form>
+    </div>
+  </div>
+{% endblock %}

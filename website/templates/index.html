@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>{% block title %}Notify{% endblock %}</title>
+    <link rel="icon" type="image/png" href="static/imgs/favicon.png">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg" aria-label="Offcanvas navbar large">
+    <div class="container">
+      <a class="navbar-brand" href="/"><img style="width: 80px; height: 80px" src="static/imgs/Notify-logo.png" alt="Notify"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+        <div class="offcanvas-header">
+          <img style="width: 80px; height: 80px" src="static/imgs/Notify-logo.png" alt="Notify">
+          <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" id="home" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="profile" href="/profile">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="logout" href="/logout">Logout</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link" id="login" href="/login">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="register" href="/register">Register</a>
+            </li>
+          </ul>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </nav>
+
+  <section id="alerts">
+    <div class="container">
+      <div class="row my-3">
+        <div class="col">
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                {% if category == 'error' %}
+                  <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3 text-dark">
+                    <div id="liveToast" class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
+                      <div class="toast-header text-bg-danger text-white">
+                        <i class="bi bi-exclamation-circle-fill me-3"></i>
+                        <strong class="me-auto">Notify</strong>
+                        <small>Just now</small>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+                      </div>
+                      <div class="toast-body text-secondary-emphasis">
+                        {{message}}
+                      </div>
+                    </div>
+                  </div>
+                {% else %}
+                <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3 text-dark">
+                  <div id="liveToast" class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header text-bg-primary text-white">
+                      <i class="bi bi-exclamation-circle-fill me-3"></i>
+                      <strong class="me-auto">Notify</strong>
+                      <small>Just now</small>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body text-secondary-emphasis">
+                      {{message}}
+                    </div>
+                  </div>
+                </div>
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="container">
+    {% block content %}{% endblock %}
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/38.1.0/classic/ckeditor.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

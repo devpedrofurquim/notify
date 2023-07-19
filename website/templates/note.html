@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+{% block title %}Notify{% endblock %}
+{% block content %}
+<article class="note-container">
+    <div class="note-header">
+        <div>
+            <img class="rounded-circle note-img" src="{{url_for('static', filename = 'profile_pics/' + note.author.image_file)}}">
+            <h3>{{note.author.username}}</h3>
+        </div>
+        <small class="text-muted">{{note.date.strftime('%Y-%m-%d')}}</small>
+    </div>
+    <div class="note-body">
+        <p>{{ note.text }}</p>
+    </div>
+</article>
+{% endblock content%}
