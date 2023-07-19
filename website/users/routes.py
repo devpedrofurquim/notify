@@ -1,3 +1,4 @@
+from sqlalchemy import or_
 from .utils import send_reset_email, save_picture
 from flask import Blueprint,render_template, request, flash, redirect, url_for
 from .. import User
@@ -20,13 +21,13 @@ def register():
         password1 = request.form.get('password1')
         password2 = request.form.get('password2')
 
-        user = User.query.filter_by(email=email).first()
-        name = User.query.filter_by(username=username).first()
+        user = User.query.filter(or_(User.email == email, User.username == username)).first()
 
         if user:
-            flash('Email already exists.', category='error')
-        if name:
-            flash('Username already exists.', category='error')
+            if user.email == email:
+                flash('Email already exists.', category='error')
+            if user.username == username:
+                flash('Username already exists.', category='error')
         elif len(email) < 4: 
             flash('Email must be greater than 3 characters.', category='error')
         elif len(email) > 99:
