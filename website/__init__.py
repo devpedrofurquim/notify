@@ -7,7 +7,7 @@ from website.config import Config
 
 db = SQLAlchemy()
 DB_NAME='database.db'
-    
+
 from website.models import User
         
 login_manager = LoginManager()

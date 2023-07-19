@@ -7,8 +7,8 @@ from sqlalchemy.sql import func
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(100), unique=True, nullable=False)
-    image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
-    password = db.Column(db.String(15), nullable=False)
+    image_file = db.Column(db.String(20), nullable=False, default='default.png')
+    password = db.Column(db.String(1000), nullable=False)
     username = db.Column(db.String(10), nullable=False)
     notes = db.relationship('Note', backref='author', lazy=True)
     

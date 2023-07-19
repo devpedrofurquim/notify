@@ -22,9 +22,10 @@ def delete_picture(filename):
     return True
     
 def save_picture(picture, user):
-    if user.image_file != 'default':
+    if user.image_file != 'default.png':
         delete_picture(user.image_file) 
     
+    print(user.image_file)
     random_hex = secrets.token_hex(8)
     _, f_ext = os.path.splitext(picture.filename)
     picture_filename = random_hex + f_ext
