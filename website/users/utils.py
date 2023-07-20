@@ -17,9 +17,18 @@ If you did not make this request then simply ignore this email.
     
 def delete_picture(filename):
     picture_path = os.path.join(current_app.root_path, 'static/profile_pics', filename)
-
-    os.remove(picture_path)
-    return True
+    try:
+        if os.path.exists(picture_path):
+            os.remove(picture_path)
+            return True
+        else:
+            # The file does not exist, so nothing to delete
+            print(f"File '{picture_path}' not found.")
+            return False
+    except Exception as e:
+        # Log the error or handle it appropriately
+        print(f"Error deleting picture: {e}")
+        return False
     
 def save_picture(picture, user):
     if user.image_file != 'default.png':
