@@ -1,5 +1,6 @@
 body {
     color: #333333;
+    overflow-x: hidden;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -106,4 +107,45 @@ body {
     justify-content: center;
     align-content: center;
     margin: 20px;
+    z-index: 1
+  }
+
+  .foo-img {
+    width: 400px;
+    height: 400px;
+  }
+
+  .pedro-furquim {
+    cursor: pointer;
+  }
+
+  .footer-year {
+    font-size: 14px;
+  }
+
+  .footer-credit {
+    font-size: 14px;
+  }
+
+  .sidebar-wrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0; /* Set the background color of the sidebar */
+    z-index: 4;
+  }
+
+  .profile-button {
+    margin-bottom: 60px;
+  }
+  
+  .pagination {
+    margin-bottom: 70px;
+  }
+
+  @media screen and (max-width: 600px) {
+    .foo-img {
+      width: 200px;
+      height: 200px;
+    }
   }
