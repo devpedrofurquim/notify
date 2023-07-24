@@ -3,14 +3,14 @@ from flask_login import login_required, current_user
 from .. import db
 from website.models import Note, User
 from sqlalchemy import desc
-
+from website.articles.routes import Articles
 main = Blueprint('main', __name__)
 
 @main.route('/', methods=['GET'])
 def foo():
     if current_user.is_authenticated:
         return redirect(url_for('main.home'))
-    return render_template('foo.html', user=current_user)
+    return render_template('foo.html', user=current_user, article=Articles)
 
 
 @main.route('/home', methods=['GET', 'POST'])

@@ -143,6 +143,12 @@ body {
     margin-bottom: 70px;
   }
 
+  .article-img {
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+  }
+
   @media screen and (max-width: 600px) {
     .foo-img {
       width: 200px;
