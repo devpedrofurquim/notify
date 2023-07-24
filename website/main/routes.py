@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, flash, url_for
+from flask import Blueprint, render_template, request, flash, url_for, redirect
 from flask_login import login_required, current_user
 from .. import db
 from website.models import Note, User
@@ -6,13 +6,14 @@ from sqlalchemy import desc
 
 main = Blueprint('main', __name__)
 
-@main.route('/foo', methods=['GET'])
+@main.route('/', methods=['GET'])
 def foo():
-
+    if current_user.is_authenticated:
+        return redirect(url_for('main.home'))
     return render_template('foo.html', user=current_user)
 
 
-@main.route('/', methods=['GET', 'POST'])
+@main.route('/home', methods=['GET', 'POST'])
 @login_required
 def home():
     if request.method == 'POST':
@@ -34,5 +35,5 @@ def home():
     per_page = 6  # Number of notes to display per page
     user = User.query.get(current_user.id)
     notes = Note.query.filter_by(user_id=user.id).order_by(desc(Note.date)).paginate(page=page, per_page=per_page)    
-    
-    return render_template('home.html',user=current_user, notes=notes, img_file=img_file)
+    num_notes = Note.query.filter_by(user_id=user.id).count()
+    return render_template('home.html',user=current_user, notes=notes, img_file=img_file, num_notes=num_notes)

@@ -6,7 +6,7 @@
         <div class="col-md-6 order-md-1 order-2 text-center text-md-start">
             <h1 class="display-3 text-dark fw-bold mb-4">Welcome to Notify!</h1>
             <p class="fw-bold h3 mb-4">Take Notes. Stay Organized. Be Productive.</p>
-            <button class="btn btn-primary btn-lg mt-4" type="button">Register Now</button>
+            <a class="btn btn-primary btn-lg mt-4" href="{{ url_for('users.register') }}" >Register Now</a>
         </div>
         <div class="col-md-6 order-md-1 d-flex justify-content-center align-items-center">
             <img src="static/imgs/relax.png" class="img-fluid w-sm-50 foo-img" alt="Coffee Shop Image">
@@ -18,14 +18,14 @@
         <div class="h-100 p-5 bg-body-tertiary d-flex flex-column justify-content-center align-items-center border rounded-3">
             <h2 class="lead text-dark mb-3">Increase your creativity</h2>
             <img src="static/imgs/puzzle.png" class="img-fluid w-50 mb-4">
-            <button class="btn btn-outline-lg border border-dark" type="button">Know More</button>
+            <a class="btn btn-outline-lg border border-dark" href="{{ url_for('articles.creativity') }}">Know More</a>
         </div>
     </div>
     <div class="col-md-6 mb-3">
         <div class="h-100 p-5 bg-body-tertiary d-flex flex-column justify-content-center align-items-center border rounded-3">
             <h2 class="lead text-dark mb-3">Organize your thoughts</h2>
             <img src="static/imgs/sticky-note.png" class="img-fluid w-50 mb-4">
-            <button class="btn btn-outline-lg border border-dark" type="button">Know More</button>
+            <a class="btn btn-outline-lg border border-dark" href="{{ url_for('articles.organization') }}">Know More</a>
         </div>
     </div>
 </div>

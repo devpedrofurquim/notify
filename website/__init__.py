@@ -27,11 +27,14 @@ def create_app(config_class=Config):
     from website.notes.routes import notes
     from website.main.routes import main
     from website.errors.routes import errors
+    from website.articles.routes import articles
 
     app.register_blueprint(users, url_prefix='/')
     app.register_blueprint(notes, url_prefix='/')
     app.register_blueprint(main, url_prefix='/')
     app.register_blueprint(errors, url_prefix='/')
+    app.register_blueprint(articles)
+
 
     
     login_manager.init_app(app)

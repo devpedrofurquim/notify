@@ -5,14 +5,10 @@
 {% if user.is_authenticated %}
   <div class="nav-scroller bg-body d-flex justify-content-center align-items-center mb-3">
     <nav class="nav" aria-label="Secondary navigation">
-      <a class="btn btn-primary rounded-pill me-3" aria-current="page" href="#">
+      <span class="btn btn-primary rounded-pill me-3" aria-current="page">
         All Notes
-        <span class="badge text-bg-light rounded-pill align-text-bottom">12</span>
-      </a>
-      <a class="btn btn-primary rounded-pill px-3" href="#">
-        Pinned
-        <span class="badge text-bg-light rounded-pill align-text-bottom">4</span>
-      </a>
+        <span class="badge text-bg-light rounded-pill align-text-bottom">{{num_notes}}</span>
+      </span>
     </nav>
   </div>
 {% endif %}
