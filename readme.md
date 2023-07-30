@@ -1,6 +1,6 @@
 # Notify
-
-Notify is a minimalist web-based CRUD application that allows users to create, read, update, and delete notes. It was fully developed by [@Pedro Furquim](https://github.com/devpedrofurquim) as his final project for Cs50.
+#### Video Demo:  <https://www.youtube.com/watch?v=Evftrt2YWt4>
+#### Description: Notify is a minimalist web-based CRUD application that allows users to create, read, update, and delete notes. It was fully developed by [@Pedro Furquim](https://github.com/devpedrofurquim) as his final project for Cs50.
 
 You can check out the live version of the project here: [Notify Live](https://notify-mg43.onrender.com/)
 
