@@ -101,13 +101,13 @@ The project utilizes modules to organize different functionalities into separate
 
 For example:
 
-* users: Contains routes and logic related to user management (login, registration, profile).
+* **users**: Contains routes and logic related to user management (login, registration, profile).
 
-* notes: Deals with note-related routes and logic (create, view, update, delete notes).
+* **notes**: Deals with note-related routes and logic (create, view, update, delete notes).
 
-* articles: Similar to notes, but for articles.
+* **articles**: Similar to notes, but for articles.
 
-* errors: Handles error pages (404, 500) with their corresponding templates.
+* **errors**: Handles error pages (404, 500) with their corresponding templates.
 
 ## Project Views
 
