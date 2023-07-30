@@ -20,15 +20,15 @@ You can check out the live version of the project here: [Notify Live](https://no
 ## Project Views
 
 ### Main View
-![Main View](/home/pedro-furquim/Development/personal-projects/fullstack_projects/Notify/website/static/imgs/main_page.png)
+![Main View](website/static/imgs/main_page.png)
 
 ### Homepage View
-![Homepage View](/home/pedro-furquim/Development/personal-projects/fullstack_projects/Notify/website/static/imgs/homepage.png)
+![Homepage View](website/static/imgs/homepage.png)
 
 ### Notes View
-![Notes View](/home/pedro-furquim/Development/personal-projects/fullstack_projects/Notify/website/static/imgs/notes_page.png)
+![Notes View](website/static/imgs/notes_page.png)
 
 ### Settings View
-![Settings View](/home/pedro-furquim/Development/personal-projects/fullstack_projects/Notify/website/static/imgs/settings.png)
+![Settings View](website/static/imgs/settings.png)
 
 Feel free to explore the project and use it for your note-taking needs! If you encounter any issues or have suggestions for improvements, please don't hesitate to [open an issue](https://github.com/devpedrofurquim/notify/issues) on the GitHub repository. Happy noting!
