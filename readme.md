@@ -44,8 +44,7 @@ Notify utilizes tech stack Cs50 teaches their students. The technologies employe
 #Project Structure
 
 The Notify project follows the conventions of the Flask Framework. Below is an overview of the project's structure:
-`
-` 
+```
 ├── project
 │   ├── app.py
 │   ├── requirements.txt
@@ -86,7 +85,7 @@ The Notify project follows the conventions of the Flask Framework. Below is an o
 │   │   └── main
 │   │   │   ├── __init__.py
 │   │   │   ├── routes.py
-│   │   └── erros
+│   │   └── errors
 │   │   │   ├── __init__.py
 │   │   │   ├── routes.py
 │   │   ├── __init__.py
@@ -95,8 +94,7 @@ The Notify project follows the conventions of the Flask Framework. Below is an o
 │   │   ├── models.py
 │   │   ├── views.py
 └── README.md
-`
-`
+```
 ## Working with Modules
 
 The project utilizes modules to organize different functionalities into separate components.
