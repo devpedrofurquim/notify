@@ -8,17 +8,17 @@ You can check out the live version of the project here: [Notify Live](https://no
 
 Notify is designed to enhance the user experience and provide seamless functionality. Below are the key features included in the project:
 
-* User Registration and Login:
+* **User Registration and Login:**
     * Users can securely register accounts with Notify to access the application.
     * Existing users can log in with their credentials to manage their data.
-* Password Reset Functionality:
+* **Password Reset Functionality:**
     * Notify offers a secure password reset mechanism.
     * Users who forget their passwords can request a reset link sent to their registered email.
     * The reset link contains a token that allows users to reset their password securely.
-* User Profile Management:
+* **User Profile Management:**
     * Users have the flexibility to update their profile information.
     * They can change their profile picture, username, and email address as needed.
-* Note Management:
+* **Note Management:**
     * Notify enables users to create personal notes for organizing information.
     * Users can read and view their existing notes.
     * The application supports updating notes to keep information up to date.
@@ -41,7 +41,7 @@ Notify utilizes tech stack Cs50 teaches their students. The technologies employe
 * **Database:**
     * **PostgreSQL:** A powerful open-source relational database management system. It is chosen for its reliability, scalability, and strong data integrity features.
 
-#Project Structure
+# Project Structure
 
 The Notify project follows the conventions of the Flask Framework. Below is an overview of the project's structure:
 ```
