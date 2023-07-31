@@ -109,6 +109,11 @@ For example:
 
 * **errors**: Handles error pages (404, 500) with their corresponding templates.
 
+## Attribution
+
+The stickers used in Notify design were created by [paulalee](https://www.flaticon.com/authors/paulalee?type=sticker) and are sourced from Flaticon. Please visit the link for more information and to show your appreciation for their work.
+
+
 ## Project Views
 
 ### Main View
